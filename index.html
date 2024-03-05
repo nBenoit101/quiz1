@@ -8,7 +8,7 @@
 	<meta name="author" content="Your name goes here">
 
 	<!-- tab title -->
-	<title>[Enter page title here]</title>
+	<title>"I understand nothing."</title>
 
 	<!-- favicon link -->
 	<link rel="shortcut icon" href="images/favicon.ico">
@@ -21,7 +21,158 @@
 	<style>
 
 		/* Add the necessary CSS here between the style tags */
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
+		.clearfix::after{
+			content: "";
+			clear: both;
+			display: table;
+		}
+
+		html{
+			color: #afeeee;
+			background-image: url(images/officetile.jpg);
+			background-attachment: fixed;
+		}
+
+		header{
+			display: flex;
+			align-items: center;
+		}
+
+		header img{
+			max-width: 350px;
+			width: 100%;
+			margin: 1em 1em 1em 1em;
+		}
+
+		header h2{
+			font-size: 200%;
+		}
+
+		#nav_menu{
+			background-color: #afeeee;
+		}
+
+		#nav_menu ul{
+			list-style-type: none;
+			display: flex;
+			border-top: 3px solid brown;
+			border-bottom: 3px solid brown;
+		}
+
+		#nav_menu li{
+			width: 20%;
+
+		}
+
+		#nav_menu a{
+			display: block;
+			text-align: center;
+			padding-block: .75em;
+			text-decoration: none;
+			color: brown;
+			font-size: 110%;
+			font-weight: bold;
+			font-variant: small-caps;
+			transition: ease-in-out 300ms;
+		}
+
+		#nav_menu a:hover{
+			color: black;
+			background-color: azure;
+		}
+
+		h1{
+			font-size: 250%;
+			color: navy;
+			margin-top: .25em;
+			text-align: center;
+			font-variant: small-caps;
+		}
+
+		main{
+			display: flex;
+			gap: 1.5em;
+
+		}
+
+		main p{
+			margin: 1em 1em 1em 1em;
+		}
+
+		section{
+			width: 80%;
+		}
+
+		section img{
+			float: left;
+			border: 1px solid black;
+			border-radius: 15px;
+			box-shadow: 2px 2px 10px 2px gray;
+			margin: .5em .75em .5em .75em;
+		}
+
+		aside h3{
+			text-align: center;
+			margin-bottom: .25em;
+		}
+
+		aside ul{
+			width: 100%;
+			background-color: brown;
+			list-style-type: none;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			padding: 1em 1em 1em 1em;
+			border-radius: 15px;
+			box-shadow: -2px 2px 10px 2px grey;
+		}
+
+		aside a{
+			display: block;
+			text-align: center;
+			text-decoration: none;
+			color: white;
+			font-weight: bold;
+		}
+
+		aside a:hover{
+			color: greenyellow;
+		}
+
+
+		body{
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 100%;
+			color: brown;
+			background-color: white;
+			max-width: 960px;
+			width: 100%;
+			margin: 0 auto;
+			border: 2px solid brown;
+			box-shadow: 2px 2px 8px 2px grey;
+		}
+
+		footer{
+			border-top: 2px solid brown;
+		}
+
+		footer p{
+			text-align: center;
+			padding-top: 2em;
+			padding-bottom: 2em;
+			background-color: #dddddd;
+			font-size: 85%;
+			font-variant: small-caps;
+			font-weight: bold;
+			
+		}
 
 	</style>
 
@@ -30,6 +181,7 @@
 <body>
 
 	<header>
+		<img src="images/theofficelogo.jpg" alt="">
 		<h2>Not Really The Office</h2>
 	</header>
 
@@ -47,7 +199,7 @@
 
 	<main>
 
-		<section>
+		<section class="clearfix">
 			<img src="images/nonono.gif">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper lacinia velit at finibus. Quisque felis dolor, placerat at tempus ut, mollis a tellus. Aenean tortor enim, dictum sed felis a, molestie euismod enim. Vestibulum fermentum mi quis ante pulvinar, at eleifend ipsum cursus. Nunc ultricies convallis porta. In non convallis augue. Mauris luctus gravida ipsum, vel dictum magna rutrum eu. Nulla facilisi. Morbi lobortis enim vitae lectus pulvinar, at hendrerit eros porttitor.</p>
 			<p>Donec vulputate facilisis dignissim. Nulla dapibus nisi urna, ac accumsan magna bibendum in. Sed tincidunt, nulla quis finibus efficitur, justo libero consequat orci, eget porta augue ex eu magna. Nullam vestibulum, nisi ac tempor varius, est velit efficitur lectus, non aliquam turpis felis a sem. Nam cursus dolor non mauris tincidunt blandit eu at mi. Sed dapibus pulvinar nisi a posuere. Nulla pulvinar aliquam suscipit. Duis metus nibh, ultrices at odio sed, interdum fringilla libero. Phasellus viverra, augue ornare consequat semper, erat turpis viverra justo, in porttitor erat diam nec arcu. Duis tempor, lacus sed porttitor rutrum, ligula est feugiat lacus, efficitur blandit nibh enim vitae dui. Maecenas euismod nisi ac orci semper aliquam.</p>
@@ -72,8 +224,12 @@
 	</main>
 
 	<footer>
-		<p>&copy; <span></span> [your-name-here] Productions</p>
+		<p>&copy; <span id="copyrightyear"></span> Nick Benoit Productions</p>
 	</footer>
 
 </body>
 </html>
+<script>
+	const d = new Date();
+	document.getElementById('copyrightyear').innerHTML = d.getFullYear();
+</script>
